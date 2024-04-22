@@ -1,0 +1,109 @@
+:root {
+    --success: #47d864;
+    --info: #2f86eb;
+    --warn: #ffc021;
+    --error: #ff623d;
+}
+
+/* ========= TOAST MESSENGER ========== */
+
+.cover {
+    /*fixed: sử dụng right-left thay thế cho float:left, float:right; */
+    position: fixed;
+    top: 65px;
+    right: 10px;
+    width: 25%;
+
+}
+
+#a {
+    /* z-index: 99999; */
+    display: flex;
+    padding: 0px 0;
+    align-items: center;
+    border-radius: 2px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    width: 100%;
+    transition: all ease-in-out 0.5s;
+    animation: slide 0.5s ease-in-out;
+}
+.fade-out{
+   animation:  fadeOut linear 1s  forwards;
+}
+
+@keyframes slide {
+
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 30px));
+        /* X = left , Y = Top */
+        /*cái 30px lộ ra là của thằng right trong khối .cover*/
+    }
+
+    /* Đến vị trí ban đầu mình set cho nó */
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Khi nó xuất hiện được một lúc thì nó sẽ mờ mờ và ẩn đi */
+@keyframes fadeOut {
+
+    /* Vì nó đang ở mặc định rồi nên ko cần from ( bắt đầu ) nữa*/
+    to {
+        opacity: 0;
+    }
+}
+
+.toast__icon {
+    font-size: 24px;
+    padding: 0 16px;
+}
+
+.toast__close {
+    font-size: 20px;
+    padding: 0 25px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast+.toast {
+    margin-top: 10px;
+}
+
+.toast__tittle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.toast--success {
+    border-color: var(--success);
+
+}
+
+.toast--success .toast__icon {
+    color: var(--success);
+    /* color: red; */
+}
+
+.toast--warning {
+    border-color: var(--warn);
+}
+
+.toast--warning .toast__icon {
+    color: var(--warn);
+}

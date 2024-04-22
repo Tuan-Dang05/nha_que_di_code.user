@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Signika:wght@300..700&display=swap');
+
+.dropdown-menu > div > li > button:hover{
+    background-color: rgb(34, 240, 237);
+    border-radius: 50px;
+    width: 120px;
+}
+.dropdown-menu > div > li >button {
+    padding: 7px;
+    margin-left:20%;
+} 
+.dropdown-menu{
+    animation: showLocate .7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-align: center;
+}
+
+.navbar_top, .cai_dat{
+    display: none;
+}
+.table_nav{
+    position: absolute;
+    /* z-index: 10; */
+    background-color: rgb(244, 239, 239);
+    color: black;
+    font-weight: 500;
+    border: 1px solid black;
+    border-radius: 5px;
+    right: 20px;
+    top: 66px;
+    display: none;
+    animation: showTableNav .5s ease-in-out;
+}
+.tb_a{
+    text-align: center;
+
+
+}
+
+.tb_a > img{
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: -10px;
+}
+.name_tb_nav{
+    font-weight: 700;
+    font-size: large;
+}
+.tb_b{
+    text-align: center;
+    justify-content: center;
+}
+.email_tb_nav{
+    font-size: 11px;
+}
+.nav-item:hover .nav{
+    cursor: pointer;
+    color: red;
+}
+.fa-coins{
+    color: rgb(163, 163, 22);
+}
+#coin_table_nav{
+    color: rgb(3, 196, 0);
+}
+#status_tb_nav{
+    padding: 7px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border: 1px solid orange;
+}
+@keyframes showTableNav {
+    from{
+        top: -10px;
+        opacity: 0;
+    }
+    to{
+        top: 100;
+        opacity: 1;
+    }
+}
+@keyframes showLocate {
+    from{
+        top:0;
+        opacity: 0;
+    }
+    to{
+        top:100;
+        opacity: 1;
+    }
+}
+.tai_khoan_tb_nav,.sang_toi_tb_nav{
+    line-height: 30px;
+    
+}

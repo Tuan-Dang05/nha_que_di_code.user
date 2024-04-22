@@ -1,0 +1,134 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+/*========== Colors ==========*/
+:root {
+    --body-first-color: #212121;
+    --body-second-color: #191919;
+    --card_cv-color: #ffce00;
+    --text-first-color-card_cv: rgba(0, 0, 0, 0.1);
+    --text-second-color-card_cv: #ffce00;
+}
+
+/* ==================== BASE ====================
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--body-first-color);
+} */
+
+/*==================== MODULE ====================*/
+
+.card_cv {
+    position: relative;
+    width: 320px;
+    height: 430px;
+    background: var(--body-second-color);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+
+.card_cv::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: var(--card_cv-color);
+    /*This declaration allows the cutting on the card_cv*/
+    transform: skewY(345deg) !important;
+    transition: 0.5s;
+}
+
+.card_cv:hover::before {
+    top: -60%;
+    /*This declaration allows the cutting on the card_cv*/
+    transform: skewY(390deg) !important;
+}
+
+.card_cv::after {
+    content: 'CORSAIR';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 6.5em;
+    color: var(--text-first-color-card_cv);
+}
+
+.card_cv .card_cv-headphone {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 20px;  */
+    z-index: 1;
+}
+
+.card_cv .card_cv-headphone img {
+    max-width: 100%;
+    transition: 0.5s;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.card_cv:hover .card_cv-headphone img {
+    max-width: 70%;
+}
+
+.card_cv .card_cv-infos {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.card_cv .card_cv-infos h3 {
+    font-size: 18px;
+    color: #FFF;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* .card_cv .card_cv-infos .price {
+    font-size: 24px;
+    color: var(--text-second-color-card_cv);
+    font-weight: 500;
+    letter-spacing: 1px;
+} */
+
+.card_cv .card_cv-infos .buy {
+    position: relative;
+    top: 200px;
+    opacity: 0;
+    padding: 10px 30px;
+    /* margin-top: 15px; */
+    color: #FFF;
+    text-decoration: none;
+    background: var(--card_cv-color);
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.card_cv:hover .card_cv-infos .buy {
+    top: 10px;
+    opacity: 1;
+}

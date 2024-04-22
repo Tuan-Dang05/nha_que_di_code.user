@@ -1,0 +1,37 @@
+.footerweb{
+    height: auto;
+    padding-bottom: 3rem;
+    background-color: black;
+  }
+  .kanan-search button{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 0.4rem 1.2rem;
+    margin: -12px 0;
+    border-radius: 20px;
+  }
+  .search{
+    margin-top: 2rem;
+    display: flex;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    justify-content: space-between;
+    background-color: white;
+  }
+  .search input{
+    background-color: none;
+    border: none;
+    padding-right: 20px;
+    width: 14.5rem;
+  }
+  .search input::placeholder{
+    color: rgb(99, 99, 99);
+  }
+  .search input:focus{
+    outline: none;
+  }
+  .kanan-search button:active{
+    background-color: rgb(144, 145, 145);
+    cursor: pointer;
+  }

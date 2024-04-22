@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./image/logo.png" />
+    <link rel="stylesheet" type="text/css" href="./css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="./css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="./css/contruction.css" />
+    <link rel="stylesheet" type="text/css" href="./css/minigame.css" />
+    <link rel="stylesheet" type="text/css" href="./css/CV_tool.css" />
+    <link rel="stylesheet" type="text/css" href="./css/leader.css" />
+    <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="./css/toastmess.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- font_awesome 5 -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- boostrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- swiper css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- https://kushagra.dev/lab/hint/ -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css'>
+    <!-- canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="" />
+
+    <title>Nhà quê đi code</title>
+</head>
+<style>
+    body,
+    html {
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14.5px;
+    }
+    .red-text {
+        color: red;
+    }
+</style>
+
+<body>
+
+    <!-- ============ Navbar ============-->
+    <img class="col-12" src="./image/bg2.gif" />
+    <div class="text-center text-light" style="z-index: 99999; 
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); filter: drop-shadow(12px 12px 5px rgb(134, 134, 134));">
+        <p style="font-family: 'Signika', sans-serif;
+    font-weight: 900;
+    font-size: 90px;
+    " id="logo_nhaquedicode">
+            <span style="display: inline-block;">
+                NHÀ QUÊ ĐI CODE
+            </span>
+        </p>
+        <div class='text-light hoi_anh_em' style=" position: absolute; 
+top: 65%;
+left: 50%;
+transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
+            <p>Hội anh em nhà quê lên phố</p>
+        </div>
+
+    </div>
+
+    <nav class="navbar fixed-top navbar-expand-lg border-info border-bottom border-2"
+        style="background-color: rgba(255,255,255); height:4rem;">
+
+        <div class="container-fluid">
+            <img class="logo" src="./image/logo.png" width="55px" class="ms-3" alt="logo" />
+            <a href="/"> <img src="./image/name.png" width="170px" class="ms-2 nha_que_di_code"
+                    alt="nha_que_di_code" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="offcanvas offcanvas-end navbar_offcanvas" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header" style="background-color:#7F7F7F; height:4.3rem;">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        aria-label="Close" style="font-size: 20px;"></button>
+                </div>
+                <!-- right -->
+                <!-- TOAST MESS -->
+                <div class="cover" id="toast" style="display:none">
+                    
+                    <div class="toast  toast--success"  id="a" style="border-color: #47d864">
+                        <div class="toast__icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="toast__body">
+                            <h3 class="toast__tittle pt-3"></h3>
+                            <p class="toast__msg"></p>
+                        </div>
+                        <div class="toast__close" id="close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                        <!-- navbar image -->
+                        <li class="nav-item ms-2 me-1 navbar_top">
+                            <div class="info_top">
+                                <div class="a">
+                                    <img src="https://noithatbinhminh.com.vn/wp-content/uploads/2022/08/anh-dep-40.jpg.webp"
+                                        width="45px" id="avatar" class="avt_top" alt="avatar_top" />
+                                </div>
+                                <div class="b mt-2 ms-2">
+                                    <span class="name_top" id="name_login">Tuan Dang </span>
+                                    <!-- <br> -->
+                                    <div class="pt-1 email_top" id="email_login">anhtuandang2605@gmail.com</div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="tai_khoan">
+                                <div class="set_status">
+                                    Trạng thái: &nbsp; <span id="status">Đã đăng nhập</span>
+                                </div>
+                                <div class="donate">
+                                    Nạp tiền: &nbsp; <span id="banking">QR banking </span>
+                                </div>
+                                <div class="set_status">
+                                    Số dư: &nbsp; <span id="coin">1000 <i class="fas fa-coins"></i></span>
+                                </div>
+                            </div>
+                            <hr />
+                        </li>
+
+                        <li class="nav-item mt-1 ms-2">
+                            <a class="nav-link active" aria-current="page" href="/">
+                                <span class='nav'>Nhà</span>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown mt-1">
+                            <a class="nav-link ms-2" data-bs-toggle="dropdown" aria-expanded="false" href='./'>
+                                <span class='nav'>Portfolio</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <div class="flex-column" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <li><button class="nav-link fs-5" id="v-pills-home-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-home" type="button" role="tab"
+                                            aria-controls="v-pills-home" aria-selected="true">Anh Tuấn</button></li>
+                                    <li><button class="nav-link fs-5" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-profile" type="button" role="tab"
+                                            aria-controls="v-pills-profile" aria-selected="false">Đức Duy</button></li>
+                                    <li><button class="nav-link fs-5" id="v-pills-duc-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-duc" type="button" role="tab"
+                                            aria-controls="v-pills-duc" aria-selected="false">Quang Đức</button></li>
+                                    <li><button class="nav-link fs-5" id="v-pills-dat-tab" data-bs-toggle="pill"
+                                            data-bs-target="#v-pills-dat" type="button" role="tab"
+                                            aria-controls="v-pills-dat" aria-selected="false">Xuân Đạt</button></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a class="nav-link ms-2" href=''>
+                                <span class='nav'>Đội ngũ xây dựng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a class="nav-link ms-2" href=''>
+                                <span class='nav'>Sản phẩm</span>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-1">
+                            <a class="nav-link ms-2" href=''>
+                                <span class='nav'>Lãnh đạo</span>
+                            </a>
+                        </li>
+                        <li class="nav-item ms-2 me-3" id="scroll_down" style="cursor: pointer;">
+                            <img src="./image/logo.png" width="45" id="avatar" class="avt_bottom" alt="avatar" />
+                            <i class="fas fa-chevron-down" id="arrow_down"></i>
+                        </li>
+                        <div class="cai_dat ms-2 me-3">
+                            <hr />
+                            <div class="sang_toi">
+                                <i class="fas fa-cog"></i> Cài đặt màn hình
+                            </div>
+                            <div class="dang_xuat">
+                                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- showTableNav -->
+        <div class="table_nav p-3" id="table_navbar">
+            <div class="info_table_nav">
+                <div class="tb_a">
+                    <img src="https://noithatbinhminh.com.vn/wp-content/uploads/2022/08/anh-dep-40.jpg.webp"
+                        width="45px" id="avatar" class="avt_nav_bar" alt="avatar_top" />
+                </div>
+                <div class="tb_b mt-3">
+                    <span class="name_tb_nav">Tuan Dang </span>
+                    <!-- <br> -->
+                    <div class="pt-1 email_tb_nav">anhtuandang2605@gmail.com</div>
+                </div>
+                <hr />
+
+                <div class="tai_khoan_tb_nav">
+                    <div class="set_status_tb_nav">
+                        Trạng thái: &nbsp; <span id="status_tb_nav">Đã đăng nhập</span>
+                    </div>
+                    <div class="donate">
+                        Nạp tiền: &nbsp; <span id="banking_tb_nav">QR banking </span>
+                    </div>
+                    <div class="set_status">
+                        Số dư: &nbsp; <span id="coin_table_nav">1000 <i class="fas fa-coins"></i></span>
+                    </div>
+                </div>
+                <hr />
+                <div class="sang_toi_tb_nav">
+                    <i class="fas fa-cog"></i> Cài đặt màn hình
+                </div>
+                <div class="dang_xuat">
+                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- ============ Navbar ============-->
+
+
+    <!-- ============ CONTRUCTION ============-->
+    <section class="aboutUs">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" data-aos="fade-up" data-aos-duration={1000}>
+                    <img src="./image/contruction.jpg" class="img-fluid img-thumbnail mt-5" alt=''
+                        style="border-radius:25px" />
+                </div>
+                <div class="col-lg-7 ps-4" data-aos="fade-up" data-aos-duration={1500}>
+                    <p style="color: #64ccc5; margin-top: 10rem; font-size: 50px">
+                        Đội ngũ xây dựng
+                    </p>
+                    <h1 class="text-dark" style="width: 100%; font-size: 3rem">
+                        Sứ mệnh cốt lõi đằng sau công việc chúng tôi!
+                    </h1>
+                    <p style="color: black; width: 80%"">
+                    Trở thành nhà cung cấp dịch vụ du lịch uy tín, chất lượng nhất Việt Nam với giá cả cạnh tranh.
+                    </p>
+                    <div class=" angka" style="display: flex; gap: 3rem">
+                    <div class="angka1">
+                        <h2 style="color: #64ccc5">4 +</h2>
+                        <p class="text-dark">Thành viên nhóm</p>
+                    </div>
+                    <div class="angka1">
+                        <h2 style="color: #64ccc5">330 +</h2>
+                        <p class="text-dark">Thời gian hoàn thành (giờ)</p>
+                    </div>
+                </div>
+                <div class="start mt-3">
+                    <a href class='btn-hover color-7 p-3'>Xem chi tiết về chúng tớ!</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- ============ CONTRUCTION ============-->
+
+
+    <!-- ============ PRODUCT ============-->
+    <div class='text-center fw-medium' style=" font-size: clamp(35px,4vw,50px); margin-top: 100px">Sản phẩm của chúng tớ
+    </div>
+    <hr />
+    <div class="text-center fs-1 fw-bolder">
+        <span class="me-3">
+            <img src='./image/arcade-game.gif' width="50" alt='arcade-game' />
+        </span>
+        Mini Game
+        <span class="ms-3">
+            <img src='./image/arcade-game.gif' width="50" alt='arcade-game' />
+        </span>
+
+    </div>
+    <!-- ============ MINI GAME ============-->
+    <div class='col-12'>
+        <div class="wrapper_product">
+            <div class="card_product mt-4 mb-4" data-aos="flip-left" data-aos-duration="2000">
+                <!-- {/* TETRIS GAME */} -->
+                <div class="poster"><img src="./image/minigame/game_1.png" alt="Simple Tetris Game" /></div>
+                <div class="details">
+                    <h1>Simple Tetris Game</h1>
+                    <h2>2024 • Tuan_Dang • javascipt</h2>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class='text-light'>4.2/5</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">#Game</span>
+                        <span class="tag">#JavaScript</span>
+                        <span class="tag">#Tetris</span>
+                    </div>
+                    <p class="desc">
+                        Tetris cổ điển: Trò chơi giải đố mang tính biểu tượng đã trở lại!
+                    </p>
+                    <div class="cast">
+                        <h4>Xem Trước & tải về</h4>
+                        <ul>
+                            <li>
+                                <a href='https://tuan-dang05.github.io/Simple-Tetris-Game/' target='_blank'
+                                    rel="noreferrer"><img src="./image/view.gif" alt="view.gif" /></a>
+                            </li>
+                            <li onclick="showSuccess('Simple Tetris Game')">
+                                <a href="./game/Simple-Tetris-Game.zip" download="Simple-Tetris-Game.zip">
+                                    <img src="./image/download.gif" alt="download.gif" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card_product mt-4 mb-4" data-aos="flip-right" data-aos-duration="2000">
+                <!-- {/* Tic Tac Toe Game */} -->
+                <div class="poster"><img src="./image/minigame/game_2.png" alt="Tic Tac Toe Game" /></div>
+                <div class="details">
+                    <h1>Tic Tac Toe Game</h1>
+                    <h2>2024 • Tuan_Dang • javascipt</h2>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class='text-light'>4.2/5</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">#Game</span>
+                        <span class="tag">#JavaScript</span>
+                        <span class="tag">#Tic Tac</span>
+                    </div>
+                    <p class="desc">
+                        Đã đến lúc thể hiện kỹ năng Tic Tac Toe của bạn!
+                    </p>
+                    <div class="cast">
+                        <h4>Xem Trước & tải về</h4>
+
+                        <ul>
+                            <li>
+                                <a href='https://tuan-dang05.github.io/Tic-Tac-Game/' target='_blank'
+                                    rel="noreferrer"><img src="./image/view.gif" alt="view.gif" /></a>
+                            </li>
+                            <li onclick="showSuccess('Tic Tac Toe Game')">
+                                <a href="./game/Tic-Tac-Game.zip" download="Tic-Tac-Game.zip">
+                                    <img src="./image/download.gif" alt="download.gif" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card_product mt-4 mb-4" data-aos="flip-left" data-aos-duration="2000">
+                <div class="poster"><img src="./image/minigame/game_3.png" alt="Simple Tetris Game" /></div>
+                <div class="details">
+                    <h1>Memory Game</h1>
+                    <h2>2025 • Tuan_Dang • javascipt</h2>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class='text-light'>4.2/5</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">#Game</span>
+                        <span class="tag">#JavaScript</span>
+                        <span class="tag">#Memory</span>
+                    </div>
+                    <p class="desc">
+                        Memory game: trò chơi giúp bạn có trí nhớ siêu phàm!
+                    </p>
+                    <div class="cast">
+                        <h4>Xem Trước & tải về</h4>
+
+                        <ul>
+                            <li>
+                                <a href='https://tuan-dang05.github.io/memory-game/' target='_blank'
+                                    rel="noreferrer"><img src="./image/view.gif" alt="view.gif" /></a>
+                            </li>
+                            <li onclick="showSuccess('Memory Game')">
+                                <a href="./game/memory-game.zip" download="memory-game.zip">
+                                    <img src="./image/download.gif" alt="download.gif" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card_product mt-4 mb-4" data-aos="flip-right" data-aos-duration="2000">
+                <div class="poster"><img src="./image/minigame/game_4.png" alt="Simple Tetris Game" /></div>
+                <div class="details">
+                    <h1>Simple Snake Game</h1>
+                    <h2>2025 • Tuan_Dang • javascipt</h2>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class='text-light'>4.2/5</span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">#Game</span>
+                        <span class="tag">#JavaScript</span>
+                        <span class="tag">#Snake</span>
+                    </div>
+                    <p class="desc">
+                        Snake game: giúp bạn xả trét sau những giờ làm việc mệt mỏi
+                    </p>
+                    <div class="cast">
+                        <h4>Xem Trước & tải về</h4>
+
+                        <ul>
+                            <li>
+                                <a href='https://tuan-dang05.github.io/snake-game/' target='_blank'
+                                    rel="noreferrer"><img src="./image/view.gif" alt="view.gif" /></a>
+                            </li>
+                            <li onclick="showSuccess('Simple Snake Game')">
+                                <a href="./game/snake-game.zip" download="snake-game.zip">
+                                    <img src="./image/download.gif" alt="download.gif" />
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center mt-5">Thống kê lượt tải về</h1>
+        <div class="row">
+            <div class="col-6 mb-5" style="margin: 0 auto;">
+
+                <div id="chart-container">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+            <script>
+                const ctx = document.getElementById('chart').getContext('2d');
+                const data = {
+                    labels: ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ Nhật'],
+                    datasets: [{
+                        label: 'Số lượt tải về trong 1 tuần',
+                        data: [8, 7, 12, 8, 6, 5, 8],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2
+                    }]
+                };
+
+                const options = {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                };
+
+                const chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: data,
+                    options: options
+                });
+            </script>
+        </div>
+        <hr />
+        <div class="text-center fs-1 fw-bolder">
+            <span class="me-3">
+                <img src='./image/passion.gif' width="50" alt='fire' />
+            </span>
+
+            CV Tool
+            <span class="ms-3">
+
+                <img src='./image/passion.gif' width="50" alt='fire' />
+            </span>
+            <h4 class='text-secondary mt-3'>Công cụ tạo CV dành cho riêng bạn</h4>
+        </div>
+
+        <!-- ============ CV TOOL ============-->
+
+        <div class="col-12">
+            <div class='' style="display:flex;justify-content:space-between; flex-wrap:wrap">
+                <!-- {/* Mẫu 1 */} -->
+                <div class="card_cv mt-4 mb-4" data-aos="zoom-in-up" data-aos-duration="1500">
+                    <div class="card_cv-headphone">
+                        <img src="./image/CV_tool/cv_tool_1.png" alt="headphone" />
+                    </div>
+                    <div class="card_cv-infos">
+                        <h3 class="card_cv-title">Mẫu 1</h3>
+                        <!-- {/* <h2 class="price">$40.<small>99</small></h2> */} -->
+                        <a href="./CV_TOOL/Mau_1/index.html" target="_blank" class="buy" style="cursor:pointer">Dùng thử</a>
+                    </div>
+                </div>
+
+                <!-- {/* Mẫu 2 */} -->
+                <div class="card_cv mt-4 mb-4" data-aos="zoom-in-down" data-aos-duration="1500">
+                    <div class="card_cv-headphone">
+                        <img src="./image/CV_tool/cv_tool_2.png" alt="headphone" />
+                    </div>
+                    <div class="card_cv-infos">
+                        <h3 class="card_cv-title">Mẫu 2</h3>
+                        <!-- {/* <h2 class="price">$40.<small>99</small></h2> */} -->
+                        <a href class="buy" style="cursor:pointer">Dùng thử</a>
+                    </div>
+                </div>
+                <!-- {/* Mẫu 3 */} -->
+                <div class="card_cv mt-4 mb-4" data-aos="zoom-in-up" data-aos-duration="1500">
+                    <div class="card_cv-headphone">
+                        <img src="./image/CV_tool/cv_tool_3.png" alt="headphone" />
+                    </div>
+                    <div class="card_cv-infos">
+                        <h3 class="card_cv-title">Mẫu 3</h3>
+                        <!-- {/* <h2 class="price">$40.<small>99</small></h2> */} -->
+                        <a href class="buy" style="cursor:pointer">Dùng thử</a>
+                    </div>
+                </div>
+                <!-- {/* Mẫu 4 */} -->
+                <div class="card_cv mt-4 mb-4" data-aos="zoom-in-down" data-aos-duration="1500">
+                    <div class="card_cv-headphone">
+                        <img src="./image/CV_tool/cv_tool_4.png" alt="headphone" />
+                    </div>
+                    <div class="card_cv-infos">
+                        <h3 class="card_cv-title">Mẫu 4</h3>
+                        <!-- {/* <h2 class="price">$40.<small>99</small></h2> */} -->
+                        <a href class="buy" style="cursor:pointer">Dùng thử</a>
+                    </div>
+                </div>
+            </div>
+            <h1 class="text-center mt-5">Thống kê lượt dùng thử</h1>
+            <div class="row">
+                <div class="col-6 mb-5" style="margin: 0 auto;">
+                    <div id="chart-container">
+                        <canvas id="chart2"></canvas>
+                    </div>
+                </div>
+                <script>
+                    const ctx2 = document.getElementById('chart2').getContext('2d');
+                    const data2 = {
+                        labels: ['Thứ 2', 'Thứ 3', 'Thứ 4', 'Thứ 5', 'Thứ 6', 'Thứ 7', 'Chủ Nhật'],
+                        datasets: [{
+                            label: 'Số lượt dùng thử trong 1 tuần',
+                            data: [6, 7, 2, 3, 1, 3, 8],
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2
+                        }]
+                    };
+
+                    const options2 = {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    };
+
+                    const chart2 = new Chart(ctx2, {
+                        type: 'bar',
+                        data: data2,
+                        options: options2
+                    });
+                </script>
+            </div>
+
+            <!-- ============ LÃNH ĐẠO ============-->
+
+            <section class="user mt-5" data-aos="fade-up" data-aos-duration={1500}>
+
+                <div class="container">
+                    <div class="kartu-user mt-5">
+                        <div class="foto-user text-center mt-5">
+                            <img src="./image/leader.jpg" alt="leader_tuan" />
+                        </div>
+                        <p class="text-center mt-5 mb-2" style=" font-weight: 700; font-size: 25px">
+                            “Là một leader của đội <span style="color:red">Nhà quê đi code</span> tớ muốn cả team cùng
+                            nhau phát triển hơn và đạt nhiều thành tựu trong tương lai!”
+                        </p>
+                        <p class="mt-4 fw-bold text-center" style=" font-size: 40px ">
+                            Tuấn Đặng
+                        </p>
+                        <p class="text-center" style=" margin-top: -1rem ">@Tuan_developer</p>
+                        <div class="iconbungkus mt-4 mb-5"
+                            style=" display: flex; align-items: center; justify-content: center; gap: 2rem ">
+                            <a href='https://www.facebook.com/tundz05' target='_blank' rel="noopener noreferrer">
+                                <div class="kiri"
+                                    style=" background-color: black; padding: 0.5rem 1rem; color: white; border-radius: 50%;cursor:pointer ">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                            </a>
+                            <a href='https://github.com/Tuan-Dang05' target='_blank' rel="noopener noreferrer">
+                                <div class="kiri"
+                                    style=" background-color: black; padding: 0.5rem 0.8rem; color: white; border-radius: 50%;cursor:pointer">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ FOOTER ============-->
+            <section class="footerweb">
+                <div class="container">
+                    <div class="row" style="padding-top: 4rem ">
+                        <div class="col-lg-4">
+                            <img src="./image/name_white.png" alt='' />
+                            <p style="color: white; width: 80% " class="mt-5">
+                                We’re a team of strategic creator and digital innovator, united
+                                focus in our pursuit of mastery and joyful.
+                            </p>
+                        </div>
+                        <div class="col-lg-2">
+                            <h5 style="color: cyan ">Pages</h5>
+                            <p class="mt-5 text-white">Home</p>
+                            <p class="text-white">Members</p>
+                            <p class="text-white">My family</p>
+                            <p class="text-white">Confidence</p>
+                            <p class="text-white">Our service</p>
+                            <p class="text-white">Construction</p>
+                            <p class="text-white">Leader</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <h5 style="color: cyan ">Account</h5>
+                            <p class="mt-5 text-white">Sign In</p>
+                            <p class="text-white">Sign Up</p>
+
+                        </div>
+                        <div class="col-lg-4">
+                            <h5 style="color: cyan">Subscribe</h5>
+                            <div class='text-center' id='check_err' style="color: red; margin:-1rem 0px "></div>
+                            <div class='text-center' id='check_err2' style="color: green; margin: -1rem 0px"></div>
+
+                            <form id="send">
+                                <div class="search">
+
+                                    <div class="search-kiri">
+                                        <input type="text" id="check_value" name='message'
+                                            placeholder="Lời nhắn nhủ tới chúng tớ" />
+                                    </div>
+                                    <div class="kanan-search text-white" style="cursor: pointer ">
+                                        <button type='submit' onsubmit="sendEmail()">Subscribe</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- {/* <div class='text-danger fs-6 mt-3 ms-3'>Lưu ý khi gửi email cho chúng tớ:</div>
+                        <div class='text-info fs-6 mt-1 ms-5'>Cú pháp: Email của cậu / nội dung cậu muốn gửi</div> */} -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+</body>
+<!-- ZIP -->
+<script src="path/to/zip.js"></script>
+<!-- boostrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!-- swiper -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Lordicon -->
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
+<script>
+    AOS.init();
+</script>
+<script src="./js/nav.js"></script>
+<script src="./js/toastmess.js"></script>
+
+<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+<script type="text/javascript">
+    (function () {
+        emailjs.init("user_YOUR_USER_ID");
+    })();
+</script>
+<script>
+    // INIT EMAILJS
+
+
+    function sendEmail(e) {
+        var check = document.getElementById('check_value').value;
+        e.preventDefault();
+        var templateParams = {
+            message: check,
+        };
+        if (check.trim() !== '') {
+            document.getElementById('check_err2').innerHTML = 'Email đã được gửi đi!';
+            document.getElementById('check_err').innerHTML = '';
+
+            emailjs.send('service_j1mhyuc', 'template_ghg7094', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                }, function (error) {
+                    console.log('FAILED...', error);
+                });
+        } else {
+            document.getElementById('check_err').innerHTML = 'Vui lòng nhập một vài kí tự!';
+            document.getElementById('check_err2').innerHTML = '';
+        }
+    }
+    
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>

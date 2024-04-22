@@ -1,0 +1,113 @@
+@media (max-width:1350px) {
+    #logo_nhaquedicode >span{
+        font-size: 75px;
+    }
+}
+@media (max-width:1210px) {
+    #logo_nhaquedicode >span{
+        font-size: 70px;
+    }
+}
+@media (max-width:1120px) {
+    #logo_nhaquedicode >span{
+        font-size: 65px;
+        /* position: absolute;  */
+        top: 0%;
+        left: 0%;
+        transform: translate(0%, -50%); 
+    }
+}
+@media (max-width:1050px) {
+    #logo_nhaquedicode >span{
+        font-size: 60px;
+        /* position: absolute;  */
+        top: 0%;
+        left: 0%;
+        transform: translate(0%, -50%); 
+    }
+}
+
+
+@media (max-width:992px) {
+    .logo{
+        display: none;
+    }
+    .navbar_offcanvas{
+        background-color: rgba(0,0,0,.2) !important;
+        width: 250px !important;
+       }
+       .nav{
+        color: white !important;
+        font-size: 16px !important;
+        text-align: center !important;
+       }
+       .navbar_top,.cai_dat{
+        display: block;
+        color: white;   
+       }
+       .avt_bottom{
+        display: none;
+       }
+       .avt_top{
+        width: 80px;
+       }
+       .info_top{
+        line-break: strict;
+        display: flex;
+        /* line-height: 20px; */
+    }
+    .name_top{
+        font-weight: 600;
+        color: cyan;
+        font-size: 18px;
+    }
+    .email_top{
+        font-size: 11px;
+        font-weight: 300;
+    }
+    hr{
+        color: white;
+    }
+    .tai_khoan{
+        line-height: 1cm;
+    }
+    #status{
+        background-color: #04AA6D;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    #banking:hover{
+        color: cyan;
+    }
+    .fa-coins{
+        color: yellow;
+    }
+    #arrow_down{
+        display: none;
+    }
+    .cai_dat{
+        line-height: 1cm;
+    }
+    .a > img{
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: -10px;
+    }
+    #coin{
+        color: rgb(50, 255, 46);
+    }
+}
+
+@media (max-width:1970px) {
+    #logo_nhaquedicode >span{
+        font-size: 55px;
+        /* position: absolute;  */
+        top: 10%;
+        left: 0%;
+        transform: translate(0%, -60%); 
+    }
+}
