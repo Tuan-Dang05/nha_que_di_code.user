@@ -109,7 +109,7 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
 
             <div class="offcanvas offcanvas-end navbar_offcanvas" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header" style="background-color:#7F7F7F; height:4.3rem;">
+                <div class="offcanvas-header" style="background-color:#7F7F7F; height:4rem;">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                         aria-label="Close" style="font-size: 20px;"></button>
                 </div>
@@ -137,13 +137,13 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                         <li class="nav-item ms-2 me-1 navbar_top">
                             <div class="info_top">
                                 <div class="a">
-                                    <img src="https://noithatbinhminh.com.vn/wp-content/uploads/2022/08/anh-dep-40.jpg.webp"
-                                        width="45px" id="avatar" class="avt_top" alt="avatar_top" />
+                                    <img src=""
+                                        width="45px" id="avatar_1" class="avt_top" alt="avatar_top" />
                                 </div>
                                 <div class="b mt-2 ms-2">
-                                    <span class="name_top" id="name_login">Tuan Dang </span>
+                                    <span class="name_top" id="name_login"> </span>
                                     <!-- <br> -->
-                                    <div class="pt-1 email_top" id="email_login">anhtuandang2605@gmail.com</div>
+                                    <div class="pt-1 email_top" id="email_login"></div>
                                 </div>
                             </div>
                             <hr />
@@ -203,7 +203,7 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                             </a>
                         </li>
                         <li class="nav-item ms-2 me-3" id="scroll_down" style="cursor: pointer;">
-                            <img src="./image/logo.png" width="45" id="avatar" class="avt_bottom" alt="avatar" />
+                            <img src="" width="45" id="avatar_3" class="avt_bottom" alt="avatar" style="border-radius: 50%;" />
                             <i class="fas fa-chevron-down" id="arrow_down"></i>
                         </li>
                         <div class="cai_dat ms-2 me-3">
@@ -211,8 +211,8 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                             <div class="sang_toi">
                                 <i class="fas fa-cog"></i> Cài đặt màn hình
                             </div>
-                            <div class="dang_xuat">
-                                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                            <div class="dang_xuat" >
+                                <a href="https://nha-que-di-code.vercel.app/" class="text-light" id="nha-que-di-code.vercel.app"> <i class="fas fa-sign-out-alt"></i> <label for="nha-que-di-code.vercel.app" style="cursor: pointer;">Đăng xuất</label></a> 
                             </div>
                         </div>
                     </ul>
@@ -224,19 +224,19 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
         <div class="table_nav p-3" id="table_navbar">
             <div class="info_table_nav">
                 <div class="tb_a">
-                    <img src="https://noithatbinhminh.com.vn/wp-content/uploads/2022/08/anh-dep-40.jpg.webp"
-                        width="45px" id="avatar" class="avt_nav_bar" alt="avatar_top" />
+                    <img src=""
+                        width="45px" id="avatar_2" class="avt_nav_bar" alt="avatar_top" />
                 </div>
                 <div class="tb_b mt-3">
-                    <span class="name_tb_nav">Tuan Dang </span>
+                    <span class="name_tb_nav" id="name_1"> </span>
                     <!-- <br> -->
-                    <div class="pt-1 email_tb_nav">anhtuandang2605@gmail.com</div>
+                    <div class="pt-1 email_tb_nav" id="email_1"></div>
                 </div>
                 <hr />
 
                 <div class="tai_khoan_tb_nav">
                     <div class="set_status_tb_nav">
-                        Trạng thái: &nbsp; <span id="status_tb_nav">Đã đăng nhập</span>
+                        Trạng thái: &nbsp; <span id="status_tb_nav">Đã nhập</span>
                     </div>
                     <div class="donate">
                         Nạp tiền: &nbsp; <span id="banking_tb_nav">QR banking </span>
@@ -250,7 +250,7 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                     <i class="fas fa-cog"></i> Cài đặt màn hình
                 </div>
                 <div class="dang_xuat">
-                    <i class="fas fa-sign-out-alt"></i> Đăng xuất
+                    <a href="https://nha-que-di-code.vercel.app/" id="nha-que-di-code.vercel.app"> <i class="fas fa-sign-out-alt"></i> <label for="nha-que-di-code.vercel.app" style="cursor: pointer;">Đăng xuất</label></a> 
                 </div>
             </div>
         </div>
@@ -781,6 +781,7 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
 </script>
 <script src="./js/nav.js"></script>
 <script src="./js/toastmess.js"></script>
+<script src="./js/getToken.js"></script>
 
 <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
 <script type="text/javascript">
