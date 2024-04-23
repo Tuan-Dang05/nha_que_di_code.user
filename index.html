@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./css/leader.css" />
     <link rel="stylesheet" type="text/css" href="./css/footer.css" />
     <link rel="stylesheet" type="text/css" href="./css/toastmess.css" />
+    <link rel="stylesheet" type="text/css" href="./css/vote.css" />
     <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -44,16 +45,35 @@
         font-weight: 400;
         font-size: 14.5px;
     }
+
     .red-text {
         color: red;
+    }
+
+    .showAlert {
+        animation: showAlert .5s ease-in-out;
+    }
+
+    @keyframes showAlert {
+        from {
+            top: -100px;
+            opacity: 0;
+        }
+
+        to {
+            top: 10;
+            opacity: 1;
+        }
     }
 </style>
 
 <body>
-
     <!-- ============ Navbar ============-->
+    <!-- alert -->
+    <div class="col-2 bg-secondary position-relative justify-content-center text-center text-light p-2 showAlert"
+        id="showAlert2" style="z-index: 9999; margin:0 auto;top:70px;bottom:0;display:block">Đăng nhập thành công!</div>
     <img class="col-12" src="./image/bg2.gif" />
-    <div class="text-center text-light" style="z-index: 99999; 
+    <div class="text-center text-light" style="z-index: 0; 
     position: absolute; 
     top: 50%;
     left: 50%;
@@ -96,8 +116,8 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                 <!-- right -->
                 <!-- TOAST MESS -->
                 <div class="cover" id="toast" style="display:none">
-                    
-                    <div class="toast  toast--success"  id="a" style="border-color: #47d864">
+
+                    <div class="toast  toast--success" id="a" style="border-color: #47d864">
                         <div class="toast__icon">
                             <i class="fa-solid fa-circle-check"></i>
                         </div>
@@ -514,7 +534,8 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                     <div class="card_cv-infos">
                         <h3 class="card_cv-title">Mẫu 1</h3>
                         <!-- {/* <h2 class="price">$40.<small>99</small></h2> */} -->
-                        <a href="./CV_TOOL/Mau_1/index.html" target="_blank" class="buy" style="cursor:pointer">Dùng thử</a>
+                        <a href="./CV_TOOL/Mau_1/index.html" target="_blank" class="buy" style="cursor:pointer">Dùng
+                            thử</a>
                     </div>
                 </div>
 
@@ -626,6 +647,71 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                 </div>
             </section>
 
+
+            <!-- ĐÁNH GIÁ -->
+
+            <div class="container2">
+                <div class="feedback">
+                    <h3><b>Đánh giá chúng tớ</b></h3>
+                    <div class="rating">
+                        <input type="radio" name="rating" id="rating-5">
+                        <label for="rating-5"></label>
+                        <input type="radio" name="rating" id="rating-4">
+                        <label for="rating-4"></label>
+                        <input type="radio" name="rating" id="rating-3">
+                        <label for="rating-3"></label>
+                        <input type="radio" name="rating" id="rating-2">
+                        <label for="rating-2"></label>
+                        <input type="radio" name="rating" id="rating-1">
+                        <label for="rating-1"></label>
+                        <div class="emoji-wrapper">
+                            <div class="emoji">
+                                <img src="./image/emoji/bored.gif" width="90" alt="" style="margin-top:15px">
+                                <img src="./image/emoji/sad.gif" width="90" alt="" style="margin-top:5px">
+                                <img src="./image/emoji/angry.gif" width="90" alt="" style="margin-top: 10px;">
+                                <img src="./image/emoji/happy.gif" width="90" alt="" style="margin-top:10px">
+                                <img src="./image/emoji/kiss.gif" width="90" alt="" style="margin-top:10px">
+                                <img src="./image/emoji/surprised.gif" width="90" alt="" style="margin-top:10px">
+
+
+                                <svg class="rating-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                    <g fill="#ffd93b">
+                                        <circle cx="256" cy="256" r="256" />
+                                        <path
+                                            d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z" />
+                                    </g>
+                                    <path
+                                        d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z"
+                                        fill="#e9eff4" />
+                                    <path
+                                        d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z"
+                                        fill="#45cbea" />
+                                    <path
+                                        d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z"
+                                        fill="#e84d88" />
+                                    <g fill="#38c0dc">
+                                        <path
+                                            d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z" />
+                                    </g>
+                                    <g fill="#d23f77">
+                                        <path
+                                            d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z" />
+                                    </g>
+                                    <path
+                                        d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z"
+                                        fill="#3e4347" />
+                                    <path
+                                        d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z"
+                                        fill="#e24b4b" />
+                                    <path
+                                        d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z"
+                                        fill="#fff" opacity=".2" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- ============ FOOTER ============-->
             <section class="footerweb">
                 <div class="container">
@@ -706,6 +792,20 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
     // INIT EMAILJS
 
 
+    // Đợi cho trang được tải hoàn toàn
+    document.addEventListener("DOMContentLoaded", function () {
+        // Lấy phần tử bảng thông báo
+        var alertBox = document.getElementById('showAlert2');
+
+        // Kiểm tra nếu phần tử bảng thông báo đang hiển thị
+        if (alertBox.style.display == "block") {
+            // Nếu đúng, sau 3 giây, ẩn bảng thông báo
+            setTimeout(function () {
+                alertBox.style.display = 'none'; // Sửa từ '==' thành '='
+            }, 3000);
+        }
+    });
+
     function sendEmail(e) {
         var check = document.getElementById('check_value').value;
         e.preventDefault();
@@ -727,7 +827,7 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
             document.getElementById('check_err2').innerHTML = '';
         }
     }
-    
+
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
