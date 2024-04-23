@@ -794,10 +794,24 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
 
 
     // Đợi cho trang được tải hoàn toàn
-    document.addEventListener("DOMContentLoaded", function () {
-        // Lấy phần tử bảng thông báo
-        var alertBox = document.getElementById('showAlert2');
+   // Tạo một biến flag để kiểm tra xem mã JavaScript đã được chạy chưa
+var isAlertShown = false;
 
+document.addEventListener("DOMContentLoaded", function () {
+    var hasRun = localStorage.getItem('hasRun');
+    var alertBox = document.getElementById('showAlert2');
+    console.log(hasRun);
+    if (hasRun === 'true'){
+        alertBox.style.display = 'none'; 
+
+    }
+    // Kiểm tra xem biến flag đã được đặt thành true chưa
+    if (!isAlertShown) {
+        // Đặt biến flag thành true để chỉ chạy mã JavaScript một lần
+        isAlertShown = true;
+
+        // Lấy phần tử bảng thông báo
+        
         // Kiểm tra nếu phần tử bảng thông báo đang hiển thị
         if (alertBox.style.display == "block") {
             // Nếu đúng, sau 3 giây, ẩn bảng thông báo
@@ -805,7 +819,11 @@ transform: translate(-50%, -50%); font-size: clamp(15px,2vw,26px); width:25rem">
                 alertBox.style.display = 'none'; // Sửa từ '==' thành '='
             }, 3000);
         }
-    });
+        // Đánh dấu rằng đã chạy mã JavaScript
+        localStorage.setItem('hasRun', isAlertShown);
+    }
+});
+
 
     function sendEmail(e) {
         var check = document.getElementById('check_value').value;
