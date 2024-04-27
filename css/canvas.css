@@ -39,7 +39,7 @@
     animation-play-state:running,running;
   }
   .snowflake > img{
-    width: 1.5rem;
+    width: 1rem;
   }
   .snowflake:nth-of-type(0){
     left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
@@ -87,3 +87,6 @@
     left:15%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
   }
  
+
+
+  

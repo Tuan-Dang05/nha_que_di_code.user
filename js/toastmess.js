@@ -24,4 +24,12 @@ function showSuccess(game){
         toast.classList.remove('fade-out');
         toast.style.display = 'none';
     },4000)
+
+    if(game == 'web nghe nhạc'){
+    tittle.innerHTML = 'Đã thêm vào giỏ hàng!'
+   msg.innerHTML =  `<span class="red-text">${game}</span> `
+    }
 }
+
+
+
